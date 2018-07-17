@@ -5,3 +5,5 @@
 /frontend/dist/
 /task/vendor
 /task/tmp/*
+/backend/composer.lock
+/frontend/package-lock.json
