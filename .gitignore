@@ -1,0 +1,7 @@
+/backend/storage/*.key
+/backend/vendor
+/backend/.env
+/frontend/node_modules/
+/frontend/dist/
+/task/vendor
+/task/tmp/*
