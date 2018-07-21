@@ -12,6 +12,7 @@ class FeedbackGroup
 {
     public static function messageHandler(Collection $message, Friends $friends, Groups $groups)
     {
+        return true;
         if ($message['from']['NickName'] === 'vbot 反馈群') {
             $experience = '体验流程：
             去到 vbot 的 github 网站，clone 下来，然后 git checkout v2.0 即可。运行命令为 php example.php --session=vbot';

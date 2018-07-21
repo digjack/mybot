@@ -17,6 +17,7 @@ class Hanson
 {
     public static function messageHandler(Collection $message, Friends $friends, Groups $groups)
     {
+        return true;
         if ($message['from']['NickName'] === 'HanSon') {
             if ($message['type'] === 'text') {
                 if ($message['content'] === 'hi') {
