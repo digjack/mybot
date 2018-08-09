@@ -8,6 +8,7 @@ import Contact from './views/nav1/Contact.vue'
 import Group from './views/nav1/Group.vue'
 import Label from './views/nav2/Label.vue'
 import Send from './views/nav2/Send.vue'
+import Plan from './views/nav2/Plan.vue'
 import Task from './views/nav2/Task.vue'
 
 let routes = [
@@ -43,7 +44,7 @@ let routes = [
         iconCls: 'fa fa-id-card-o',
         children: [
             { path: '/task', component: Task, name: '定时任务' },
-            // { path: '/send', component: Send, name: '群发任务' },
+            { path: '/plan', component: Plan, name: '群发计划' },
             { path: '/label', component: Label, name: '本地标签' }
         ]
     },

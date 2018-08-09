@@ -17,6 +17,8 @@ class VerifyCsrfToken extends Middleware
         '/api/task',
         '/api/task/*',
         '/api/label/*',
-        '/api/label'
+        '/api/label',
+        '/api/plan',
+        '/api/plan/*'
     ];
 }

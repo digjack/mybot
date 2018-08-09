@@ -43,6 +43,15 @@ Route::delete('/api/label/user/{id}', 'LabelUserController@delete');
 
 Route::get('/api/msg/list', 'MsgController@list');
 
+//群发计划
+Route::get('/api/plan', 'PlanController@listPlan');
+Route::post('/api/plan', 'PlanController@create');
+Route::post('/api/plan/count', 'PlanController@countNum');
+Route::post('/api/plan/confirm', 'PlanController@confirm');
+Route::delete('/api/plan/{id}', 'PlanController@cancel');
+Route::get('/api/plan/province', 'PlanController@listProvince');
+
+
 
 
 

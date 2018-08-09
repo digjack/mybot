@@ -17,6 +17,9 @@ class BotService
     private $bot;
     private $contacts;
 
+    const SEX_MALE = 1;
+    const SEX_FEMALE = 2;
+
     public static function getBot()
     {
         $user = UserService::getUser();
@@ -54,6 +57,10 @@ class BotService
                 }
             }
             $friends = $res;
+        }
+        foreach ($friends as $index => $friend){
+            $friends[$index]['RemarkName'] = trim( $friends[$index]['RemarkName']);
+            $friends[$index]['NickName'] = trim( $friends[$index]['NickName']);
         }
         return $friends;
     }

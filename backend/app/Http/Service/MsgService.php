@@ -11,6 +11,8 @@ use App\Msg;
 
 class MsgService {
 
+    const MSG_TYPE_PLAN = 8;
+
     public function send($username, $content, $params = []){
         $msg = $this->logMsg($username, $content, $params);
         $bot = BotService::getBot();
@@ -28,13 +30,14 @@ class MsgService {
         try{
             $res = self::curl('http://127.0.0.1:'.$port, json_encode($params), true);
             $msg->status = Msg::STATUS_SUCCESS;
+            $msg->save();
         }catch (\Exception $e){
             $msg->status = Msg::STATUS_FAIL;
             $msg->msg = $e->getMessage();
-            abort(400, $e->getMessage());
+            $msg->save();
+            return false;
         }
-        $msg->save();
-        return $res;
+        return true;
     }
 
     public function logMsg($username, $content, $params){
