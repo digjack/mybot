@@ -40,7 +40,7 @@ class PlanController extends Controller
 
     //群发消息
     public function confirm(Request $request){
-        $planId = $request->input('plan_id');
+        $planId = $request->input('id');
         $planService = new PlanService();
         $plan = $planService->sendPlan($planId);
         return response()->json(['status' => true, 'count' => $plan->count, 'success_count' => $plan->success_count]);
@@ -64,7 +64,7 @@ class PlanController extends Controller
         $params = $request->input('params');
         $planService = new PlanService();
         $num = $planService->countNum($params);
-        return response()->json(['num' => $num]);
+        return response()->json(['count' => $num]);
     }
 
     public function listPlan(Request $request){

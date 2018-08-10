@@ -49,4 +49,14 @@ export const listGroupMember = params => { return axios.get(`${base}/group/user/
 
 export const listMsg = params => { return axios.get(`${base}/msg/list`, { params: params }).then(res => res.data); };
 
+//群发计划
+
+export const listPlan = params => { return axios.get(`${base}/plan`, { params: params }).then(res => res.data); };
+export const addPlan = params => { return axios.post(`${base}/plan`, params).then(res => res.data); };
+export const delPlan = params => { return axios.delete(`${base}/plan/${params.id}`, { params: params }).then(res => res.data); };
+export const countMember = params => { return axios.post(`${base}/plan/count`, { params: params }).then(res => res.data); };
+export const confirmPlan = params => { return axios.post(`${base}/plan/confirm`, params ).then(res => res.data); };
+export const getProvince = params => { return axios.get(`${base}/plan/province`, { params: params }).then(res => res.data); };
+
+
 
