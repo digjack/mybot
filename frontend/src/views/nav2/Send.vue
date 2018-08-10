@@ -90,6 +90,9 @@
                 if(cellValue === 3 || cellValue === '3'){
                     return '系统发送';
                 }
+                if(cellValue === 8 || cellValue === '8'){
+                    return '群发计划';
+                }
                 return cellValue;
             },
             formatMsgStatus: function(row, column, cellValue, index){
