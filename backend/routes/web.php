@@ -51,6 +51,10 @@ Route::post('/api/plan/confirm', 'PlanController@confirm');
 Route::delete('/api/plan/{id}', 'PlanController@cancel');
 Route::get('/api/plan/province', 'PlanController@listProvince');
 
+//联系人操作
+Route::get('/api/contact/export', 'ContactController@export');
+
+
 
 
 
