@@ -10,6 +10,9 @@
                     <el-button type="primary" v-on:click="search">查询</el-button>
                 </el-form-item>
                 <el-form-item>
+                    <el-button type="primary" v-on:click="exportContacts">好友导出</el-button>
+                </el-form-item>
+                <el-form-item>
                 <el-popover
                         width="300"
                         trigger="click">
@@ -211,7 +214,10 @@
                         });
                     });
                 }
-
+            },
+            exportContacts:function () {
+                var win = window.open('/api/contact/export', '_blank');
+                win.focus();
             }
         },
         mounted() {
